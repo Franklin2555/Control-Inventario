@@ -14,5 +14,5 @@ Para el presente desarrollo, se ha utilizado los lenguajes PHP, HTML, CSS, JS y 
 ***
 Una pequeña introducción, sí se desea instalar el sistema, tomando en cuenta la licencia no comercial que este posee.
 ```
-$ git clone https://example.com
-$ cd ../dirección/hacia/el/repositorio
+$ git clone https://github.com/Franklin2555/Control-Inventario.git
+$ cd ../dirección/hacia/el/repositorio/Control-Inventario
