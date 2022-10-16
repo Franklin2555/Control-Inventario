@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin_users',
+        ],
+        
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -60,6 +65,11 @@ return [
     */
 
     'providers' => [
+        'admin_users' => [
+            'driver' => 'eloquent',
+            'model' => Brackets\AdminAuth\Models\AdminUser::class,
+        ], 
+        
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
@@ -80,13 +90,19 @@ return [
     | than one user table or model in the application and you want to have
     | separate password reset settings based on the specific user types.
     |
-    | The expire time is the number of minutes that each reset token will be
+    | The expire time is the number of minutes that the reset token should be
     | considered valid. This security feature keeps tokens short-lived so
     | they have less time to be guessed. You may change this as needed.
     |
     */
 
     'passwords' => [
+        'admin_users' => [
+            'provider' => 'admin_users',
+            'table' => 'admin_password_resets',
+            'expire' => 60,
+        ],
+        
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
