@@ -4,26 +4,42 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Categorium
+ *
+ * @property $id
+ * @property $categoria
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Producto[] $productos
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class Categorium extends Model
 {
-    protected $fillable = [
-        'categoria',
     
+    static $rules = [
+		'categoria' => 'required',
     ];
-    
-    
-    protected $dates = [
-        'created_at',
-        'updated_at',
-    
-    ];
-    
-    protected $appends = ['resource_url'];
 
-    /* ************************ ACCESSOR ************************* */
+    protected $perPage = 20;
 
-    public function getResourceUrlAttribute()
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['categoria'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productos()
     {
-        return url('/admin/categoria/'.$this->getKey());
+        return $this->hasMany('App\Models\Producto', 'categoria_id', 'id');
     }
+    
+
 }

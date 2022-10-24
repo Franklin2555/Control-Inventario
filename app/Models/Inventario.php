@@ -4,32 +4,50 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Inventario
+ *
+ * @property $id
+ * @property $producto
+ * @property $cantidad
+ * @property $precio
+ * @property $unidades
+ * @property $costo
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Producto[] $productos
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class Inventario extends Model
 {
-    protected $table = 'inventario';
-
-    protected $fillable = [
-        'producto',
-        'cantidad',
-        'precio',
-        'unidades',
-        'costo',
     
+    static $rules = [
+		'producto' => 'required',
+		'cantidad' => 'required',
+		'precio' => 'required',
+		'unidades' => 'required',
+		'costo' => 'required',
     ];
-    
-    
-    protected $dates = [
-        'created_at',
-        'updated_at',
-    
-    ];
-    
-    protected $appends = ['resource_url'];
 
-    /* ************************ ACCESSOR ************************* */
+    protected $perPage = 20;
 
-    public function getResourceUrlAttribute()
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['producto','cantidad','precio','unidades','costo'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productos()
     {
-        return url('/admin/inventarios/'.$this->getKey());
+        return $this->hasMany('App\Models\Producto', 'inventario_id', 'id');
     }
+    
+
 }
