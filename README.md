@@ -1,64 +1,57 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Control de Inventario - Noches de El Salvador
+***
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![NochesDeElSalvador](https://raw.githubusercontent.com/Jasa-Hollow/My_Monokai_Theme/main/noches.jpeg)
+## Descripción:
 
-## About Laravel
+El presente sistema es del desarrollo Prácticas Profesional Informáticas de la *Universidad Luterana Salvadoreña*, haciendo uso del marco de trabajo Scrum, por medio del cual se implementa el sistema de gestión de inventario y ventas para el restaurante **Noches de El Salvador**.
+***
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Antecedentes de la empresa:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Dentro de la jurisdicción del municipio de Santo Tomás en el departamento de San Salvador, Carlos Alfredo Pineda Jiménez era partícipe de un negocio familiar que se encontraba a cargo su familia, un negocio de comida o restaurante ubicado en su localidad. Dicho emprendimiento tuvo origen con la bisabuela Carlos Pineda, siento este ultimo que en la actualidad se encuentra dirigiendo la empresa.
+Durante sus estudios universitarios, así como el trabajo informal en una empresa de transporte, Carlos Pineda decidió emprender en el año 2022 un negocio orientado en el mismo rubro que su familia, abriendo su empresa “Noches de El Salvador” en el municipio.
+Mientras la rama del negocio en su familia tenía una orientación hacia desayunos y almuerzos, reconocidos en la localidad como un “comedor de comida casera”; por otro lado, Noches de El Salvador está orientado a un restaurante, con comida colombiana y cubana al estilo de parrilla.
+***
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Tecnologías utilizadas:
+Para el presente desarrollo, se han utilizado los siguientes lenguajes:
 
-## Learning Laravel
+- PHP.
+- HTML.
+- CSS.
+- JavaScript.
+- MySQL.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Bajo el entorno de trabajo o framework **Laravel**.
+***
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Tareas finalizadas:
+Parte de las historias de usuario desarrolladas, y su seguimiento dentro del repositorio.
 
-## Laravel Sponsors
+- [x] Login.
+- [x] Módulo de Inventario.
+- [x] Módulo de Ventas.
+- [x] Buscador en cado módulo.
+- [x] Paginación.
+- [ ] Dashboards y estadísticas.
+- [ ] Diseño conforme a la identidad corporativa de la empresa.
+***
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Licencia:
+*Esta obra está sujeta a la licencia Reconocimiento-NoComercial 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite https://creativecommons.org/licenses/by-nc-sa/4.0/*
 
-### Premium Partners
+Bajo las condiciones siguientes:
+- Reconocimiento — Debe reconocer adecuadamente la autoría, proporcionar un enlace a la licencia e indicar si se han realizado cambios<. Puede hacerlo de cualquier manera razonable, pero no de una manera que sugiera que tiene el apoyo del licenciador o lo recibe por el uso que hace.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- NoComercial — No puede utilizar el material para una finalidad comercial.
 
-## Contributing
+- CompartirIgual — Si remezcla, transforma o crea a partir del material, deberá difundir sus contribuciones bajo la misma licencia que el original.
+***
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Instalación/Uso:
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+git clone https://github.com/Franklin2555/Control-Inventario.git
+git cd /dirección/hacia/el/repositorio/local
+```
