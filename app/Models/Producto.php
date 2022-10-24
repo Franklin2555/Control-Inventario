@@ -4,33 +4,58 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Producto
+ *
+ * @property $id
+ * @property $producto
+ * @property $tiempo
+ * @property $precio
+ * @property $categoria_id
+ * @property $inventario_id
+ *
+ * @property Categorium $categorium
+ * @property Inventario $inventario
+ * @property Venta[] $ventas
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class Producto extends Model
 {
-    protected $table = 'producto';
-
-    protected $fillable = [
-        'producto',
-        'tiempo',
-        'precio',
-        'categoria_id',
-        'inventario_id',
-        'ventas_id',
     
+    static $rules = [
+		'producto' => 'required',
+		'tiempo' => 'required',
+		'precio' => 'required',
+		'categoria_id' => 'required',
+		'inventario_id' => 'required',
     ];
-    
-    
-    protected $dates = [
-        'created_at',
-        'updated_at',
-    
-    ];
-    
-    protected $appends = ['resource_url'];
 
-    /* ************************ ACCESSOR ************************* */
+    protected $perPage = 20;
 
-    public function getResourceUrlAttribute()
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['producto','tiempo','precio','categoria_id','inventario_id'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function categorium()
     {
-        return url('/admin/productos/'.$this->getKey());
+        return $this->hasOne('App\Models\Categorium', 'id', 'categoria_id');
     }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function inventario()
+    {
+        return $this->hasOne('App\Models\Inventario', 'id', 'inventario_id');
+    }
+    
+
 }
