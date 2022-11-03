@@ -11,9 +11,9 @@
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
+                <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Update Categorium</span>
+                        <span class="card-title">Editar categoría</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('categoria.update', $categorium->id) }}"  role="form" enctype="multipart/form-data">

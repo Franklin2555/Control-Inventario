@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inventario;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
 
 /**
@@ -115,5 +116,11 @@ class InventarioController extends Controller
         return view('inventario.index', compact('inventarios'))
             ->with('i', (request()->input('page', 1) - 1) * $inventarios->perPage());
 
+    }
+    public function report()
+    {
+        $inventarios = Inventario::all();
+        $pdf = SnappyPdf::loadView('inventario.report', compact('inventarios'));
+        return $pdf->inline('Inventario.pdf');
     }
 }

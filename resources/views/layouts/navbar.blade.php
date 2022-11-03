@@ -7,7 +7,6 @@
         <a class="uk-logo uk-navbar-item" href="/">
             <img class="logo" src="{{ asset('img/logo.png') }}">
         </a>
-        <!-- 
         <ul class="uk-navbar-nav">
             <li>
                 <i class="fas fa-home"></i> Home </a>
@@ -22,6 +21,5 @@
                 <i class="fab fa-youtube"></i> Ventas </a>
             </li>
         </ul>
-        -->
     </div>
 </nav>

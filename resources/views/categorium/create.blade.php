@@ -1,19 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.app') @extends('layouts.template')
 
-@section('template_title')
-    Create Categorium
-@endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="container">
         <div class="row">
             <div class="col-md-12">
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
+                <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Create Categorium</span>
+                        <span class="card-title">Crear nueva categoría</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('categoria.store') }}"  role="form" enctype="multipart/form-data">

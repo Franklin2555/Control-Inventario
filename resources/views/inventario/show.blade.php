@@ -1,20 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.app') @extends('layouts.template')
 
 @section('template_title')
     {{ $inventario->name ?? 'Show Inventario' }}
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card text-white bg-dark"">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Inventario</span>
+                            <span class="card-title">Ver Inventario</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('inventarios.index') }}"> Back</a>
+                            <a class="btn btn-dark" href="{{ route('inventario.index') }}"> Atrás</a>
                         </div>
                     </div>
 

@@ -1,19 +1,15 @@
-@extends('layouts.app')
-
-@section('template_title')
-    Create Producto
-@endsection
+@extends('layouts.app') @extends('layouts.template')
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container">
         <div class="row">
             <div class="col-md-12">
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
+                <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Create Producto</span>
+                        <span class="card-title">Crear nuevo producto</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('producto.store') }}"  role="form" enctype="multipart/form-data">

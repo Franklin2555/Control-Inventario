@@ -34,8 +34,9 @@ Parte de las historias de usuario desarrolladas, y su seguimiento dentro del rep
 - [x] Módulo de Ventas.
 - [x] Buscador en cado módulo.
 - [x] Paginación.
-- [ ] Dashboards y estadísticas.
-- [ ] Diseño conforme a la identidad corporativa de la empresa.
+- [x] Dashboards y estadísticas.
+- [x] Diseño conforme a la identidad corporativa de la empresa.
+- [x] Reportes en formato PDF
 ***
 
 ### Licencia:

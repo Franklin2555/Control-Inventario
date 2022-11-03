@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorium;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
 
 /**
@@ -114,6 +115,12 @@ class CategoriumController extends Controller
         // dd($query);
         return view('categorium.index', compact('categoria'))
             ->with('i', (request()->input('page', 1) - 1) * $categoria->perPage());
+    }
 
+    public function report()
+    {
+        $categoria = Categorium::all();
+        $pdf = SnappyPdf::loadView('categorium.report', compact('categoria'));
+        return $pdf->inline('categoria.pdf');
     }
 }
