@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Models\Categorium;
 use App\Models\Inventario;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
 
 /**
@@ -123,5 +124,11 @@ class ProductoController extends Controller
         return view('producto.index', compact('productos'))
             ->with('i', (request()->input('page', 1) - 1) * $productos->perPage());
 
+    }
+    public function report()
+    {
+        $productos = Producto::all();
+        $pdf = SnappyPdf::loadView('producto.report', compact('productos'));
+        return $pdf->inline('productos.pdf');
     }
 }

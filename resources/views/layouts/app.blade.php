@@ -17,15 +17,39 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">   
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <!-- .................................................................................................. -->
+
+    <!-- .................................................................................................. -->
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="{{ asset('css/login_style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/uikit.min.css') }}">
+    <!-- .................................................................................................. -->
+    
+    <!-- .................................................................................................. -->
+    <!-- Script JS -->
+    <script type="text/javascript" src="{{ asset('js/uikit.min.js') }}"></script>
+    <script src="https://kit.fontawesome.com/05f4903dc9.js" crossorigin="anonymous"></script>
+    <!-- .................................................................................................. -->
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" >
+            <div class="container" >
+                <a class="uk-logo uk-navbar-item" href="/home">
+                    <img class="logo" src="{{ asset('img/logo.png') }}">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,20 +59,8 @@
                     <!-- Left Side Of Navbar -->
                     @if (Auth::check())
                     <ul class="navbar-nav me-auto">
-                            
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categoria.index') }}">{{ __('Categorias') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('inventario.index') }}">{{ __('Inventario') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('producto.index') }}">{{ __('Productos') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ventas.index') }}">{{ __('Ventas') }}</a>
-                        </li>
-                    </ul>
+    
+                    </ul> 
                     @endif
 
                     <!-- Right Side Of Navbar -->
@@ -68,15 +80,16 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                
+                                <a style="color: white; text-decoration: none" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                  <i class="fas fa-user"></i> Bienvenido:  <b style="color: lightskyblue">{{ Auth::user()->name }}</b>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a style="text-decoration: none;" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Salir') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -90,10 +103,9 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" >
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('js/form.js') }}" ></script>
 </body>
 </html>

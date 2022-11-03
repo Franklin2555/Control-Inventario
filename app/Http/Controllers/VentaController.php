@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venta;
 use App\Models\Producto;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
 
 /**
@@ -19,7 +20,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        $ventas = Venta::paginate();
+        $ventas = Venta::paginate(10);
 
         return view('venta.index', compact('ventas'))
             ->with('i', (request()->input('page', 1) - 1) * $ventas->perPage());
@@ -120,5 +121,11 @@ class VentaController extends Controller
         return view('venta.index', compact('ventas'))
             ->with('i', (request()->input('page', 1) - 1) * $ventas->perPage());
 
+    }
+    public function report()
+    {
+        $ventas = Venta::all();
+        $pdf = SnappyPdf::loadView('venta.report', compact('ventas'));
+        return $pdf->inline('ventas.pdf');
     }
 }

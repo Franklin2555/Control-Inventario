@@ -17,7 +17,7 @@
             {!! $errors->first('precio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Categoria') }}
+            {{ Form::label('Categoría') }}
             {{ Form::select('categoria_id', $categorias, $producto->categoria_id, ['class' => 'form-control' . ($errors->has('categoria_id') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona la categoria']) }}
             {!! $errors->first('categoria_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
@@ -29,6 +29,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-dark">Enviar</button>
     </div>
 </div>

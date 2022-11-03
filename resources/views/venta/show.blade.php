@@ -1,20 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.app') @extends('layouts.template')
 
 @section('template_title')
     {{ $venta->name ?? 'Show Venta' }}
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card text-white bg-dark"">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Venta</span>
+                            <span class="card-title">Ver venta</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('ventas.index') }}"> Back</a>
+                            <a class="btn btn-dark" href="{{ route('ventas.index') }}"> Atrás</a>
                         </div>
                     </div>
 
@@ -41,8 +41,8 @@
                             {{ $venta->fecha_venta }}
                         </div>
                         <div class="form-group">
-                            <strong>Producto Id:</strong>
-                            {{ $venta->producto_id }}
+                            <strong>Producto:</strong>
+                            {{ $venta->Producto->producto }}
                         </div>
 
                     </div>

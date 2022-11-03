@@ -1,20 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.app') @extends('layouts.template')
 
 @section('template_title')
     {{ $producto->name ?? 'Show Producto' }}
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card text-white bg-dark"">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Producto</span>
+                            <span class="card-title">Ver producto</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('productos.index') }}"> Back</a>
+                            <a class="btn btn-dark" href="{{ route('producto.index') }}"> Atrás</a>
                         </div>
                     </div>
 
@@ -33,12 +33,12 @@
                             {{ $producto->precio }}
                         </div>
                         <div class="form-group">
-                            <strong>Categoria Id:</strong>
-                            {{ $producto->categoria_id }}
+                            <strong>Categoria:</strong>
+                            {{ $producto->categorium->categoria }}
                         </div>
                         <div class="form-group">
-                            <strong>Inventario Id:</strong>
-                            {{ $producto->inventario_id }}
+                            <strong>Inventario:</strong>
+                            {{ $producto->inventario->producto }}
                         </div>
 
                     </div>

@@ -19,6 +19,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'barryvdh/laravel-snappy' => array(
+            'pretty_version' => 'v1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => '2c18a3602981bc6f25b32908cf8aaa05952ab2f7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../barryvdh/laravel-snappy',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.9.3',
             'version' => '0.9.3.0',
@@ -176,9 +185,9 @@
             'dev_requirement' => false,
         ),
         'guzzlehttp/psr7' => array(
-            'pretty_version' => '2.4.1',
-            'version' => '2.4.1.0',
-            'reference' => '69568e4293f4fa993f3b0e51c9723e1e17c41379',
+            'pretty_version' => '2.4.3',
+            'version' => '2.4.3.0',
+            'reference' => '67c26b443f348a51926030c83481b85718457d3d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../guzzlehttp/psr7',
             'aliases' => array(),
@@ -388,6 +397,15 @@
                 0 => 'v8.83.25',
             ),
         ),
+        'knplabs/knp-snappy' => array(
+            'pretty_version' => 'v1.4.1',
+            'version' => '1.4.1.0',
+            'reference' => '5126fb5b335ec929a226314d40cd8dad497c3d67',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../knplabs/knp-snappy',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -465,6 +483,15 @@
             'install_path' => __DIR__ . '/../laravelcollective/html',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'laraveldaily/laravel-charts' => array(
+            'pretty_version' => '0.1.29',
+            'version' => '0.1.29.0',
+            'reference' => 'ed91d6e7dedabec8eb3c71cca0a22c8616faea01',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laraveldaily/laravel-charts',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'league/commonmark' => array(
             'pretty_version' => '2.3.5',

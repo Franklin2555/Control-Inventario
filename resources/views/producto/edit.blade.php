@@ -1,19 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.app') @extends('layouts.template')
 
 @section('template_title')
     Update Producto
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container">
         <div class="">
             <div class="col-md-12">
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
+                <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Update Producto</span>
+                        <span class="card-title">Editar producto</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('producto.update', $producto->id) }}"  role="form" enctype="multipart/form-data">
