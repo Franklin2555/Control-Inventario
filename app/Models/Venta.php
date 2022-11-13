@@ -25,7 +25,6 @@ class Venta extends Model
 {
     
     static $rules = [
-    'id' => 'required',
 		'producto' => 'required',
 		'cantidad' => 'required',
 		'precio' => 'required',

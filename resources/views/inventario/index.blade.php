@@ -15,8 +15,8 @@ Inventario
                     <span id="card_title">
                         <form method="GET" action="{{ route('inventary.share') }}">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" name="buscarI" placeholder="Buscar">
-                                <button class="btn btn-outline-primary input-group-text" type="submit">
+                                <input id="input_id" type="text" class="form-control bg-dark" name="buscarI" placeholder="Buscar" style="color: white">
+                                <button class="btn btn-outline-light input-group-text" type="submit">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
@@ -24,15 +24,15 @@ Inventario
                     </span>
 
                     <div class="float-right">
-                        <a href="{{ route('inventario.index') }}" class="btn btn-dark btn-sm float-right" data-placement="left">
+                        <a href="{{ route('inventario.index') }}" class="btn btn-dark float-right" data-placement="left">
                             {{ __('Mostrar todo') }}
                         </a>
                         &nbsp;
-                        <a href="{{ route('inventario.report') }}" class="btn btn-dark btn-sm float-right" data-placement="left">
+                        <a href="{{ route('inventario.report') }}" class="btn btn-dark float-right" data-placement="left">
                             {{ __('PDF') }}
                         </a>
                         &nbsp;
-                        <a href="{{ route('inventario.create') }}" class="btn btn-dark btn-sm float-right" data-placement="left">
+                        <a href="{{ route('inventario.create') }}" class="btn btn-dark float-right" data-placement="left">
                             {{ __('Nuevo inventario') }}
                         </a>
                     </div>
@@ -67,9 +67,9 @@ Inventario
 
                                 <td>{{ $inventario->producto }}</td>
                                 <td>{{ $inventario->cantidad }}</td>
-                                <td>${{ $inventario->precio }} USD</td>
+                                <td>$ {{ $inventario->precio }} USD</td>
                                 <td>{{ $inventario->unidades }}</td>
-                                <td>${{ $inventario->costo }} USD</td>
+                                <td>$ {{ $inventario->costo }} USD</td>
 
                                 <td>
                                     <form action="{{ route('inventario.destroy',$inventario->id) }}" method="POST">

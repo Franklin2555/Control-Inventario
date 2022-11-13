@@ -19,14 +19,14 @@
         <div class="container">
             <div class="row"> 
                 <div class="col-sm-12">
-                    <div class="card text-white bg-dark"">
+                    <div class="card">
                         <div class="card-header">
                             <img class="logo" src="{{ asset('img/logo.png') }}">
                             <h1 align="center">Reporte de ventas</h1>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-dark">
+                                <table class="table table-striped table-hover">
                                     <thead class="thead">
                                         <tr>
                                             <th>Venta</th>

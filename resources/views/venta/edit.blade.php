@@ -13,7 +13,7 @@
 
                 <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Editar venta</span>
+                        <span class="card-title"><i class="fa fa-cart-shopping fa-lg" aria-hidden="true"></i> Actualizar Venta</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('ventas.update', $venta->id) }}"  role="form" enctype="multipart/form-data">

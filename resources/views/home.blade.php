@@ -7,22 +7,24 @@
 <div class="container">
     <div class="card text-white bg-dark">
         <div class="row card-body">
-            <div class="col-8">
-                <h4 class="subtitle"><i class="fas fa-book"></i> Información de Ventas por día</h4>
+            <div class="col-9">
+                <h4 class="subtitle"><i class="fas fa-book"></i> Información de Ventas </h4>
+            </div>
+            <div class="col-1">
+                <a href="{{ route('filter.index') }}" class="btn btn-dark float-right" data-placement="left" data-bs-toggle="tooltip"  title="Regresar del día de hoy">
+                    {{ __('Retornar') }}
+                </a>
             </div>
             <div class="col-2">
-                <select class="form-control">
-                    <option selected disabled readonly>Filtrar</option>
-                    @foreach($filtrados as $f)
-                    <option value="{{$f['id']}}">{{$f['fecha_venta']}}</option>
-                   @endforeach
-                  </select>
-            </div>
-            <div class="col-2" style="text-align: right">
-                <a class="nav-link" href="{{ route('graficas.index')}}">
-                    <i class="fas fa-chart-pie fa-lg"></i>
-                    <span class="routes_name"> Más información </span>
-                </a>
+                <form method="GET" action="{{ route('filter.index') }}">
+                    <div class="input-group mb-3">
+                        <input id="input_id" type="text" class="form-control bg-dark" name="filtrar" 
+                        placeholder="Filtrar" required style="color: white" onkeyup="mask_up()" maxlength="10" autocomplete="off">
+                        <button class="btn btn-outline-light input-group-text" type="submit" data-bs-toggle="tooltip"  title="Buscar la venta">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>        
             </div>
         
             <div class="border-top my-1"></div>
@@ -44,7 +46,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($ventas as $venta)
+                                @foreach ($detalleVenta as $venta)
                                     <tr>
                                         <td>{{ ++$i }}</td>
                                         <td>{{ $venta->producto }}</td>
@@ -65,7 +67,7 @@
                         </table>
                     </div>
                     <div class="d-flex justify-content-end">
-                        {!! $ventas->links() !!}
+                        {!! $detalleVenta->links() !!}
                     </div>
                 </div>
             </div>
@@ -78,8 +80,8 @@
 <script>
     Highcharts.chart('GraficasPorDia', {
         chart: {
-        backgroundColor: '#fff',
         type: 'pie',
+        backgroundColor: '#2B2B2C',
         options3d: {
             enabled: true,
             alpha: 50
@@ -87,10 +89,15 @@
         },
         title: {
             text: 'Gráfico de Ventas',
-            color: '#fff',
+        style: {
+            color: '#FFF',
+        }
         },
         subtitle: {
-            text: 'Monitoreo de ventas diarias'
+            text: 'Monitoreo de ventas diarias',
+            style: {
+            color: '#FFF',
+        }
         },
         plotOptions: {
             pie: {

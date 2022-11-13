@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoriumController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VentaController;
-use App\Http\Controllers\GraficaController;
 //----------------------------------------------------
 
 /*
@@ -40,6 +40,9 @@ Route::get('productos/report', [App\Http\Controllers\ProductoController::class, 
 
 //----------------------------------------------------
 /*  RUTAS DE MÓDULOS  */
+
+// Ruta de módulo User
+Route::resource('user', App\Http\Controllers\UserController::class)->middleware('auth');
 // Ruta de módulo categorías
 Route::resource('categoria', App\Http\Controllers\CategoriumController::class)->middleware('auth');
 // Ruta de módulo inventario
@@ -48,15 +51,13 @@ Route::resource('inventario', App\Http\Controllers\InventarioController::class)-
 Route::resource('producto', App\Http\Controllers\ProductoController::class)->middleware('auth');
 // Ruta de módulo ventas
 Route::resource('ventas', App\Http\Controllers\ventaController::class)->middleware('auth');
-// Ruta de módulo ventas
-Route::resource('graficas', App\Http\Controllers\GraficaController::class)->middleware('auth');
 // Ruta al inicio
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //----------------------------------------------------
 
 //----------------------------------------------------
 // RUTAS DE BUSCADOR.
-// Budqueda de Categorias.
+// Busqueda de Categorias.
 Route::get('category/share', [CategoriumController::class, 'share'])->name('category.share');
 // Busqueda de Inventario
 Route::get('inventary/share', [InventarioController::class, 'share'])->name('inventary.share');
@@ -64,4 +65,8 @@ Route::get('inventary/share', [InventarioController::class, 'share'])->name('inv
 Route::get('product/share', [ProductoController::class, 'share'])->name('product.share');
 // Busqueda de Ventas
 Route::get('Sales/share', [VentaController::class, 'share'])->name('Sales.share');
+// Busqueda de Usuearios
+Route::get('Users/share', [UserController::class, 'share'])->name('users.share');
+// Ruta de filtrado
+Route::get('filter/index', [App\Http\Controllers\HomeController::class, 'index'])->name('filter.index');
 //----------------------------------------------------

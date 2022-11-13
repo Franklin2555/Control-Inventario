@@ -13,7 +13,7 @@
 
                 <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Edidar Inventario</span>
+                        <span class="card-title"><i class="fa fa-truck fa-lg" aria-hidden="true"></i> Edidar Inventario</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('inventario.update', $inventario->id) }}"  role="form" enctype="multipart/form-data">

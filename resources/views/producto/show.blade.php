@@ -11,7 +11,7 @@
                 <div class="card text-white bg-dark"">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Ver producto</span>
+                            <span class="card-title"><i class="fa fa-burger fa-lg" aria-hidden="true"></i> Ver producto</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-dark" href="{{ route('producto.index') }}"> Atrás</a>
