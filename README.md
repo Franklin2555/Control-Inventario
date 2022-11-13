@@ -36,7 +36,8 @@ Parte de las historias de usuario desarrolladas, y su seguimiento dentro del rep
 - [x] Paginación.
 - [x] Dashboards y estadísticas.
 - [x] Diseño conforme a la identidad corporativa de la empresa.
-- [x] Reportes en formato PDF
+- [ ] Reportes en formato PDF.
+- [x] Administración de usuarios.
 ***
 
 ### Licencia:
