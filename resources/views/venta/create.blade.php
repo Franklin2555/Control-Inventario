@@ -13,7 +13,7 @@
 
                 <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Crear Venta</span>
+                        <span class="card-title"><i class="fa fa-cart-shopping fa-lg" aria-hidden="true"></i> Nueva Venta</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('ventas.store') }}"  role="form" enctype="multipart/form-data">

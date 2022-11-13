@@ -13,9 +13,9 @@
 
                 <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title">Crear nuevo inventario</span>
+                        <span class="card-title"><i class="fa fa-truck fa-lg" aria-hidden="true"></i> Crear nuevo inventario</span>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body ">
                         <form method="POST" action="{{ route('inventario.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 

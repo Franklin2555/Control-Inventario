@@ -1,7 +1,11 @@
 @extends('layouts.app') @extends('layouts.template')
 
+@section('template_title')
+    Create User
+@endsection
+
 @section('content')
-    <section class="content container">
+    <section class="container">
         <div class="row">
             <div class="col-md-12">
 
@@ -9,13 +13,13 @@
 
                 <div class ="card text-white bg-dark">
                     <div class="card-header">
-                        <span class="card-title"><i class="fa fa-burger fa-lg" aria-hidden="true"></i> Crear nuevo producto</span>
+                        <span class="card-title">Create User</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('producto.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('user.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('producto.form')
+                            @include('user.form')
 
                         </form>
                     </div>

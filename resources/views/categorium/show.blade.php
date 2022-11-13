@@ -10,13 +10,15 @@
             <div class="col-md-12">
                 <div class="card text-white bg-dark"">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">Ver categorías</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary float-right"  data-placement="left" href="{{ route('categoria.index') }}"> 
-                            {{ __('Atrás') }}
-                            </a>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="card-title"><i class="fa fa-bookmark fa-lg" aria-hidden="true"></i> Ver categorías</span>
+                            </div>
+                            <div class="col-6" style="text-align: end">
+                                <a class="btn btn-dark "  data-placement="left" href="{{ route('categoria.index') }}"> 
+                                {{ __('Regresar') }}
+                                </a>
+                            </div>
                         </div>
                     </div>
 

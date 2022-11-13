@@ -1,39 +1,50 @@
 <div class="box box-info padding-1">
     <div class="box-body">
+        @php
+            date_default_timezone_set('America/El_Salvador');
+            $fecha = date('Y-m-d');
+        @endphp
         
-        <div class="form-group">
-            {{ Form::label('Producto') }}
-            {{ Form::text('producto', $venta->producto, ['class' => 'form-control' . ($errors->has('producto') ? ' is-invalid' : ''), 'placeholder' => 'Producto']) }}
-            {!! $errors->first('producto', '<div class="invalid-feedback">:message</div>') !!}
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    {{ Form::label('Venta')}}
+                    {{ Form::text('producto', $venta->producto, ['class' => 'form-control bg-dark text-white' . ($errors->has('venta') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingreser nueva venta']) }}
+                    {!! $errors->first('producto', '<div class="invalid-feedback">:message</div>') !!}
+                </div>
+                <div class="form-group mt-2">
+                    {{ Form::label('cantidad') }}
+                    {{ Form::text('cantidad', $venta->cantidad, ['class' => 'form-control bg-dark text-white' . ($errors->has('cantidad') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingrese la cantidad']) }}
+                    {!! $errors->first('cantidad', '<div class="invalid-feedback">:message</div>') !!}
+                </div>
+                <div class="form-group mt-2">
+                    {{ Form::label('Precio') }}
+                    {{ Form::text('precio', $venta->precio, ['class' => 'form-control bg-dark text-white' . ($errors->has('precio') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingrese el precio']) }}
+                    {!! $errors->first('precio', '<div class="invalid-feedback">:message</div>') !!}
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group mt-2">
+                    {{ Form::label('Total venta') }}
+                    {{ Form::text('total_venta', $venta->total_venta, ['class' => 'form-control bg-dark text-white' . ($errors->has('total_venta') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Total de la venta']) }}
+                    {!! $errors->first('total_venta', '<div class="invalid-feedback">:message</div>') !!}
+                </div>
+                <div class="form-group mt-2">
+                    {{ Form::label('Fecha_venta') }}
+                    {{ Form::date('fecha_venta', $venta->fecha_venta, ['class' => 'form-control bg-dark text-white'. ($errors->has('fecha_venta') ? ' is-invalid' : ''), 'id' => 'input_id']) }}
+                    {!! $errors->first('fecha_venta', '<div class="invalid-feedback">:message</div>') !!}
+                </div>
+                <div class="form-group mt-2">
+                    {{ Form::label('Producto') }}
+                    {{ Form::select('producto_id', $producto, $venta->producto_id, ['class' => 'form-control bg-dark text-white' . ($errors->has('producto_id') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Seleccione el producto']) }}
+                    {!! $errors->first('producto_id', '<div class="invalid-feedback">:message</div>') !!}
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            {{ Form::label('cantidad') }}
-            {{ Form::text('cantidad', $venta->cantidad, ['class' => 'form-control' . ($errors->has('cantidad') ? ' is-invalid' : ''), 'placeholder' => 'Cantidad']) }}
-            {!! $errors->first('cantidad', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Precio') }}
-            {{ Form::text('precio', $venta->precio, ['class' => 'form-control' . ($errors->has('precio') ? ' is-invalid' : ''), 'placeholder' => 'Precio']) }}
-            {!! $errors->first('precio', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Total venta') }}
-            {{ Form::text('total_venta', $venta->total_venta, ['class' => 'form-control' . ($errors->has('total_venta') ? ' is-invalid' : ''), 'placeholder' => 'Total Venta']) }}
-            {!! $errors->first('total_venta', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Fecha_venta') }}
-            {{ Form::date('fecha_venta', $venta->fecha_venta, ['class' => 'form-control' . ($errors->has('fecha_venta') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Venta']) }}
-            {!! $errors->first('fecha_venta', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Producto') }}
-            {{ Form::select('producto_id', $producto, $venta->producto_id, ['class' => 'form-control' . ($errors->has('producto_id') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione el producto']) }}
-            {!! $errors->first('producto_id', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        
 
     </div>
-    <div class="box-footer mt20">
+    <div class="box-footer my-4" style="text-align: center">
         <button type="submit" class="btn btn-dark">Enviar</button>
     </div>
 </div>

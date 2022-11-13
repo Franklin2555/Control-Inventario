@@ -10,11 +10,13 @@
             <div class="col-md-12">
                 <div class="card text-white bg-dark"">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">Ver venta</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-dark" href="{{ route('ventas.index') }}"> Atrás</a>
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="card-title"><i class="fa fa-cart-shopping fa-lg" aria-hidden="true"></i> Ver Venta</span>
+                            </div>
+                            <div class="col-6" style="text-align: end">
+                                <a class="btn btn-dark" href="{{ route('ventas.index') }}"> Regresar</a>
+                            </div>
                         </div>
                     </div>
 

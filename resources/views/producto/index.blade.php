@@ -15,8 +15,8 @@
                             <span id="card_title">
                                 <form method="GET" action="{{ route('product.share') }}">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="buscarP" placeholder="Buscar">
-                                        <button class="btn btn-outline-primary input-group-text" type="submit">
+                                        <input id="input_id" type="text" class="form-control bg-dark" name="buscarP" placeholder="Buscar" style="color: white">
+                                        <button class="btn btn-outline-light input-group-text" type="submit">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </button>
                                     </div>
@@ -24,15 +24,15 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('producto.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('producto.index') }}" class="btn btn-dark float-right"  data-placement="left">
                                     {{ __('Mostrar todo') }}
                                   </a>
 &nbsp;
-                                <a href="{{ route('producto.report') }}" class="btn btn-dark btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('producto.report') }}" class="btn btn-dark float-right"  data-placement="left">
                                     {{ __('PDF') }}
                                 </a>
 &nbsp;
-                                <a href="{{ route('producto.create') }}" class="btn btn-dark btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('producto.create') }}" class="btn btn-dark float-right"  data-placement="left">
                                   {{ __('Nuevo producto') }}
                                 </a>
                               </div>

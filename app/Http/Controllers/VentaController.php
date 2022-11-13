@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Venta;
 use App\Models\Producto;
+use App\Models\Venta;
 use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
 
@@ -20,7 +20,7 @@ class VentaController extends Controller
      */
     public function index()
     {
-        $ventas = Venta::paginate(10);
+        $ventas = Venta::paginate();
 
         return view('venta.index', compact('ventas'))
             ->with('i', (request()->input('page', 1) - 1) * $ventas->perPage());
@@ -51,7 +51,7 @@ class VentaController extends Controller
         $venta = Venta::create($request->all());
 
         return redirect()->route('ventas.index')
-            ->with('success', 'Venta created successfully.');
+            ->with('success', 'Venta creada con éxito.');
     }
 
     /**
@@ -96,7 +96,7 @@ class VentaController extends Controller
         $venta->update($request->all());
 
         return redirect()->route('ventas.index')
-            ->with('success', 'Venta updated successfully');
+            ->with('success', 'Venta actualizado correctamente.');
     }
 
     /**
@@ -107,10 +107,9 @@ class VentaController extends Controller
     public function destroy($id)
     {
         $venta = Venta::find($id)->delete();
-        
 
         return redirect()->route('ventas.index')
-            ->with('success', 'Venta deleted successfully');
+            ->with('success', 'Venta eliminada correctamente.');
     }
 
     public function share(Request $request)

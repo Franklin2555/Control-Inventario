@@ -8,30 +8,30 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="card text-white bg-dark"">
+                <div class="card text-white bg-dark">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
                                 <form method="GET" action="{{ route('Sales.share') }}">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="buscarV" placeholder="Buscar">
-                                        <button class="btn btn-outline-primary input-group-text" type="submit">
+                                        <input id="input_id" type="text" class="form-control bg-dark" name="buscarV" placeholder="Buscar" style="color: white">
+                                        <button class="btn btn-outline-light input-group-text" type="submit">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </button>
                                     </div>
                                 </form>
                             </span>
                              <div class="float-right">
-                                <a href="{{ route('ventas.index') }}" class="btn btn-dark btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('ventas.index') }}" class="btn btn-dark float-right"  data-placement="left">
                                     {{ __('Mostrar todo') }}
-                                  </a>
+                                </a>
 &nbsp; 
-                                <a href="{{ route('ventas.report') }}" class="btn btn-dark btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('ventas.report') }}" class="btn btn-dark float-right"  data-placement="left">
                                     {{ __('PDF') }}
                                 </a>
 &nbsp;
-                                <a href="{{ route('ventas.create') }}" class="btn btn-dark btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('ventas.create') }}" class="btn btn-dark float-right"  data-placement="left">
                                   {{ __('Nueva venta') }}
                                 </a>
                               </div>
@@ -83,7 +83,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <abbr title="Eliminar">
-                                                        <button type="submit" class="btn btn-dark btn-sm"><i class="fa fa-fw fa-trash"></i></button>
+                                                        <button type="submit" class="btn btn-sm btn-dark"><i class="fa fa-fw fa-trash"></i></button>
                                                     </abbr>
                                                 </form>
                                             </td>

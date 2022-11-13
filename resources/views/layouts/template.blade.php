@@ -40,14 +40,7 @@
         <!-- Lista de opciones para navegación del sistema -->
         <ul class="nav_list">
             <li>
-                <a href="#">
-                    <i class="fas fa-question-circle fa-lg"></i>
-                    <span class="routes_name"> Ayuda </span>
-                </a>
-                <span class="tooltip"> Ayuda </span>
-            </li>
-            <li>
-                <a href="#">
+                <a href="{{ route('user.index') }}">
                     <i class="fa fa-user-tie" aria-hidden="true"></i>
                     <span class="routes_name"> Administración </span>
                 </a>
@@ -55,31 +48,38 @@
             </li>
             <li>
                 <a class="nav-link" href="{{ route('categoria.index') }}">
-                    <i class="fa fa-egg" aria-hidden="true"></i>
+                    <i class="fa fa-bookmark" aria-hidden="true"></i>
                     <span class="routes_name"> Categoria </span>
                 </a>
                 <span class="tooltip"> Categoria </span>
             </li>
             <li>
                 <a class="nav-link" href="{{ route('inventario.index') }}">
-                    <i class="fa fa-money-bill" aria-hidden="true"></i>
+                    <i class="fa fa-truck" aria-hidden="true"></i>
                     <span class="routes_name"> Inventario </span>
                 </a>
                 <span class="tooltip"> Inventario </span>
             </li>
             <li>
                 <a class="nav-link" href="{{ route('producto.index') }}">
-                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <i class="fa fa-burger" aria-hidden="true"></i>
                     <span class="routes_name"> Productos </span>
                 </a>
                 <span class="tooltip"> Productos </span>
             </li>
             <li>
                 <a class="nav-link" href="{{ route('ventas.index') }}">
-                    <i class="fa fa-suitcase" aria-hidden="true"></i>
+                    <i class="fa fa-cart-shopping" aria-hidden="true"></i>
                     <span class="routes_name"> Ventas </span>
                 </a>
                 <span class="tooltip"> Ventas </span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-question-circle fa-lg"></i>
+                    <span class="routes_name"> Ayuda </span>
+                </a>
+                <span class="tooltip"> Ayuda </span>
             </li>
         </ul>
         <!-- .................................................................................................. -->
