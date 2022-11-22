@@ -121,9 +121,10 @@ class VentaController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $ventas->perPage());
 
     }
-    public function report()
+    public function report(Request $request)
     {
-        $ventas = Venta::all();
+        $buscar = $searchTerm = '%'.$request->filterPDF.'%';
+        $ventas = Venta::where('fecha_venta','like', $buscar)->get();
         $pdf = SnappyPdf::loadView('venta.report', compact('ventas'));
         return $pdf->inline('ventas.pdf');
     }

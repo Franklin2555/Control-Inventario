@@ -117,9 +117,10 @@ class InventarioController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $inventarios->perPage());
 
     }
-    public function report()
+    public function report(Request $request)
     {
-        $inventarios = Inventario::all();
+        $buscar = $searchTerm = '%'.$request->filterPDF.'%';
+        $inventarios = Inventario::where('created_at','like', $buscar)->get();
         $pdf = SnappyPdf::loadView('inventario.report', compact('inventarios'));
         return $pdf->inline('Inventario.pdf');
     }

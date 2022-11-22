@@ -4,14 +4,23 @@
 <!-- ............................................................................ -->
 
 <!-- ............................................................................ -->
+<script>
+    /* Función de máscara para el campo de "Filtrado" de ventas */
+    function mask_up() {
+        let id = document.getElementById("input_id");
+        if (id.value.length == 4 || id.value.length == 7) {
+            id.value += "-";
+        }
+    }
+</script>
 <div class="container">
     <div class="card text-white bg-dark">
         <div class="row card-body">
             <div class="col-9">
-                <h4 class="subtitle"><i class="fas fa-book"></i> Información de Ventas </h4>
+                <h4 class="subtitle"><i class="fas fa-book"></i> Información de Ventas</h4>
             </div>
             <div class="col-1">
-                <a href="{{ route('filter.index') }}" class="btn btn-dark float-right" data-placement="left" data-bs-toggle="tooltip"  title="Regresar del día de hoy">
+                <a href="{{ route('filter.index') }}" class="subtitle"  data-placement="left">
                     {{ __('Retornar') }}
                 </a>
             </div>
@@ -20,7 +29,7 @@
                     <div class="input-group mb-3">
                         <input id="input_id" type="text" class="form-control bg-dark" name="filtrar" 
                         placeholder="Filtrar" required style="color: white" onkeyup="mask_up()" maxlength="10" autocomplete="off">
-                        <button class="btn btn-outline-light input-group-text" type="submit" data-bs-toggle="tooltip"  title="Buscar la venta">
+                        <button class="btn btn-outline-primary input-group-text" type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
@@ -77,6 +86,7 @@
 <!-- ............................................................................ -->
 
 <!-- ............................................................................ -->
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/masking-input.js" data-autoinit="true"></script>
 <script>
     Highcharts.chart('GraficasPorDia', {
         chart: {
