@@ -56,3 +56,13 @@ Bajo las condiciones siguientes:
 git clone https://github.com/Franklin2555/Control-Inventario.git
 git cd /dirección/hacia/el/repositorio/local
 ```
+***
+
+## Diseño - Control de Inventario "Noches de El Salvador" versión 1.0:
+
+### Pantalla de inicio de sesión al sistema.
+![NochesDeElSalvador](https://raw.githubusercontent.com/Jasa-Hollow/My_Monokai_Theme/main/Login.png)
+***
+
+### Vista inicial al accesar al sistema.
+![NochesDeElSalvador](https://raw.githubusercontent.com/Jasa-Hollow/My_Monokai_Theme/main/Inicio.png)
