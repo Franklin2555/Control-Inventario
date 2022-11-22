@@ -1,3 +1,4 @@
+<!-- Formulario de ventas -->
 <div class="box box-info padding-1">
     <div class="box-body">
         @php
@@ -9,24 +10,24 @@
             <div class="col-6">
                 <div class="form-group">
                     {{ Form::label('Venta')}}
-                    {{ Form::text('producto', $venta->producto, ['class' => 'form-control bg-dark text-white' . ($errors->has('venta') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingreser nueva venta']) }}
+                    {{ Form::text('producto', $venta->producto, ['class' => 'form-control bg-dark text-white' . ($errors->has('venta') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingresar nueva venta', 'autocomplete' => 'off']) }}
                     {!! $errors->first('producto', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
                 <div class="form-group mt-2">
                     {{ Form::label('cantidad') }}
-                    {{ Form::text('cantidad', $venta->cantidad, ['class' => 'form-control bg-dark text-white' . ($errors->has('cantidad') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingrese la cantidad']) }}
+                    {{ Form::text('cantidad', $venta->cantidad, ['class' => 'form-control bg-dark text-white' . ($errors->has('cantidad') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingrese la cantidad', 'autocomplete' => 'off']) }}
                     {!! $errors->first('cantidad', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
                 <div class="form-group mt-2">
                     {{ Form::label('Precio') }}
-                    {{ Form::text('precio', $venta->precio, ['class' => 'form-control bg-dark text-white' . ($errors->has('precio') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingrese el precio']) }}
+                    {{ Form::text('precio', $venta->precio, ['class' => 'form-control bg-dark text-white' . ($errors->has('precio') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Ingrese el precio', 'autocomplete' => 'off']) }}
                     {!! $errors->first('precio', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group mt-2">
                     {{ Form::label('Total venta') }}
-                    {{ Form::text('total_venta', $venta->total_venta, ['class' => 'form-control bg-dark text-white' . ($errors->has('total_venta') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Total de la venta']) }}
+                    {{ Form::text('total_venta', $venta->total_venta, ['class' => 'form-control bg-dark text-white' . ($errors->has('total_venta') ? ' is-invalid' : ''), 'id' => 'input_id', 'placeholder' => 'Total de la venta', 'autocomplete' => 'off']) }}
                     {!! $errors->first('total_venta', '<div class="invalid-feedback">:message</div>') !!}
                 </div>
                 <div class="form-group mt-2">

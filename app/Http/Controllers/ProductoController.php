@@ -125,9 +125,10 @@ class ProductoController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $productos->perPage());
 
     }
-    public function report()
+    public function report(Request $request)
     {
-        $productos = Producto::all();
+        $buscar = $searchTerm = '%'.$request->filterPDF.'%';
+        $productos = Producto::where('created_at','like', $buscar)->get();
         $pdf = SnappyPdf::loadView('producto.report', compact('productos'));
         return $pdf->inline('productos.pdf');
     }

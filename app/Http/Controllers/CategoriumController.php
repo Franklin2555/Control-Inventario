@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorium;
+use App\Models\Logo;
+
 use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Class CategoriumController
@@ -119,8 +122,9 @@ class CategoriumController extends Controller
 
     public function report()
     {
+        $logo = Logo::all();
         $categoria = Categorium::all();
-        $pdf = SnappyPdf::loadView('categorium.report', compact('categoria'));
+        $pdf = SnappyPdf::loadView('categorium.report', compact('categoria', 'logo'));
         return $pdf->inline('categoria.pdf');
     }
 }

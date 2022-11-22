@@ -7,8 +7,8 @@
     --text-color: #ffffff;
     --bg-color: #2B2B2C;
     --navLat-color: #6C3B2A;
-    --acent-color: #DB763B;
-	--acent-color-a: #00AAA9;
+    --log-color: #DB763B;
+	--log-color-a: #00AAA9;
     --navDk-color: #542F22;
 }
 
@@ -18,8 +18,36 @@
     margin: 0;
     font-family: "Montserrat", sans-serif;
 }
+/* ------------------------------------------------------------------------------- */
 
-/* Estilo general para la página */
+/* Estilo para el botón de recuérdame */
+#rgtr {
+    position: absolute;
+    z-index: 100;
+    top: 5%; bottom: 95%; right: 10%; left: 90%;
+}
+
+button.rgtr {
+    background-color: var(--navDk-color);
+    transition: all 0.7s ease;
+    color: var(--text-color) !important;
+}
+
+button.rgtr a {
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+}
+
+button.rgtr:hover {
+    background-color: var(--navLat-color) !important;
+    transition: all 0.7s ease;
+    border-radius: 50%;
+    border-style: double;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* Estilo del login*/
 .login-wrap {
 	height: 100%;
 	display: flex;
@@ -36,6 +64,7 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 }
+/* ------------------------------------------------------------------------------- */
 
 /* Estilos del contenedor de inicio de sesión */
 .container-login {
@@ -50,24 +79,32 @@
 	padding: 20px;
 	background-color: var(--navLat-color);
 }
+/* ------------------------------------------------------------------------------- */
 
+/* ------------------------------------------------------------------------------- */
 /* Estilo - Imagen logo */
 .logo_ndp {
 	border-radius: 50%;
 	width: 150px; 
 	height: 150px;
+    transition: all 0.7s ease;
+    opacity: 0.7;
 }
 
 .logo_ndp:hover {
-	opacity: 0.7;
-    transition: all 0.7 ease;
+	opacity: 1;
+    filter: drop-shadow(100);
+    transition: all 0.7s ease;
 }
+/* ------------------------------------------------------------------------------- */
 
+/* ------------------------------------------------------------------------------- */
 /* Estilo - Textos */
 .login-text {
     text-align: center;
     font-size: 16px;
     color: var(--text-color) ;
+    text-decoration: none;
 }
 
 .login-text:hover {
@@ -88,7 +125,7 @@ legend {
     width: 200px;
     background-color: var(--navLat-color) !important;
     width: 100% !important;
-    transition: all 0.7s ease;
+    transition: all 0.7s ease !important;
 }
 
 .inputSt:hover {
@@ -96,7 +133,9 @@ legend {
     border-style: double;
     transition: all 0.7s ease;
 }
+/* ------------------------------------------------------------------------------- */
 
+/* ------------------------------------------------------------------------------- */
 /* Estilo - Botón */
 .buttonSt {
     width: 50%;
@@ -134,5 +173,4 @@ legend {
     transition: all 0.7s ease;
     border-style: double;
 }
-
 /* ------------------------------------------------------------------------------- */
